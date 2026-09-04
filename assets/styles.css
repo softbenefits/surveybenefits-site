@@ -148,8 +148,10 @@ p { line-height: 1.7; }
 .breadcrumb i { color: var(--border); font-size: 1.2em; font-style: normal; }
 .breadcrumb strong { color: var(--text); font-weight: 750; }
 .profile { display: flex; align-items: center; gap: 10px; }
-.notification { width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); }
-.notification:hover { background: var(--surface); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.notification, .fullscreen-toggle { width: 38px; height: 38px; display: inline-grid; place-items: center; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); }
+.notification:hover, .fullscreen-toggle:hover { background: var(--surface); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
+.fullscreen-toggle svg { width: 17px; height: 17px; fill: none; stroke: var(--muted); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.fullscreen-toggle:hover svg { stroke: var(--accent); }
 .profile-button { min-height: 44px; display: flex; align-items: center; gap: 9px; padding: 3px 7px 3px 3px; border: 1px solid var(--border); border-radius: 11px; background: var(--paper); color: var(--text); text-align: left; box-shadow: 0 5px 16px rgba(11,36,56,.06); }
 .profile-button:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: var(--surface); }
 .profile-copy { display: grid; gap: 2px; min-width: 150px; }

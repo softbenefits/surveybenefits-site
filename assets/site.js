@@ -46,4 +46,24 @@ document.querySelectorAll('[data-theme-toggle]').forEach(button => {
   button.addEventListener('click', () => body.classList.toggle('dark'));
 });
 
+document.querySelectorAll('[data-fullscreen-toggle]').forEach(button => {
+  const updateLabel = () => {
+    const fullscreen = Boolean(document.fullscreenElement);
+    button.setAttribute('aria-label', fullscreen ? 'Sair de ecrã inteiro' : 'Maximizar ecrã');
+    button.setAttribute('title', fullscreen ? 'Sair de ecrã inteiro' : 'Maximizar ecrã');
+  };
+
+  button.addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await document.documentElement.requestFullscreen();
+    } catch {
+      updateLabel();
+    }
+  });
+
+  document.addEventListener('fullscreenchange', updateLabel);
+  updateLabel();
+});
+
 document.querySelectorAll('[data-year]').forEach(element => element.textContent = new Date().getFullYear());
