@@ -27,6 +27,19 @@ document.querySelectorAll('form[data-prototype]').forEach(form => {
   });
 });
 
+document.querySelectorAll('[data-password-toggle]').forEach(button => {
+  button.addEventListener('click', () => {
+    const input = button.closest('.password-control')?.querySelector('[data-password-input]');
+    if (!input) return;
+
+    const shouldShow = input.type === 'password';
+    input.type = shouldShow ? 'text' : 'password';
+    button.setAttribute('aria-pressed', String(shouldShow));
+    button.setAttribute('aria-label', shouldShow ? 'Ocultar password' : 'Mostrar password');
+    input.focus({ preventScroll: true });
+  });
+});
+
 document.querySelectorAll('[data-theme-toggle]').forEach(button => {
   button.addEventListener('click', () => body.classList.toggle('dark'));
 });
