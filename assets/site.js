@@ -11,7 +11,9 @@ document.querySelectorAll('[data-toggle-sidebar]').forEach(button => {
     const sidebar = document.querySelector('.sidebar');
     if (window.matchMedia('(max-width: 900px)').matches) {
       sidebar?.classList.toggle('open');
-      button.setAttribute('aria-expanded', String(sidebar?.classList.contains('open')));
+      const isOpen = sidebar?.classList.contains('open') ?? false;
+      button.setAttribute('aria-expanded', String(isOpen));
+      button.textContent = isOpen ? '×' : '☰';
       return;
     }
     shell?.classList.toggle('collapsed');
