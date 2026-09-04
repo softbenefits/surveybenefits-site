@@ -273,6 +273,8 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .profile-copy, .profile-chevron { display: none; }
   .profile-button { min-height: 44px; padding: 3px; border: 0; box-shadow: none; }
   .avatar { width: 40px; height: 40px; flex-basis: 40px; }
+  .fullscreen-toggle { display: none; }
+  .app-content { padding: 25px 16px 92px; }
   .page-head { align-items: flex-start; flex-direction: column; }
   .table-card { overflow-x: auto; }
   .footer-row { justify-content: center; text-align: center; }
@@ -285,7 +287,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .profile { gap: 4px; }
   .page-head h1 { font-size: 1.8rem; }
   .page-head p { font-size: .95rem; line-height: 1.5; }
-  .app-content { padding-top: 28px; }
+  .app-content { padding-top: 25px; }
   .metric { padding: 18px; }
   .metric strong { font-size: 1.8rem; }
 }
