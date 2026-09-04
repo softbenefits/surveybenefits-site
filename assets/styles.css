@@ -189,7 +189,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .prototype-nav a:hover, .prototype-nav button:hover { background: rgba(255,255,255,.12); }
 .shell-toggle { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); color: var(--text); font-size: 1.15rem; }
 .shell-toggle:hover { background: var(--surface); border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); }
-.shell-toggle-edge { flex: 0 0 auto; margin-left: -30px; box-shadow: none; }
+.shell-toggle-edge { flex: 0 0 auto; margin-left: 12px; box-shadow: none; }
 .inline-row { display: flex; align-items: center; gap: 14px; }
 .content-intro { margin-top: 70px; }
 .page-title-compact { font-size: 3.2rem; }
