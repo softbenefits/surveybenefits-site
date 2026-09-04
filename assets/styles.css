@@ -146,8 +146,8 @@ p { line-height: 1.7; }
 .breadcrumb-row { order: -1; display: flex; align-items: center; gap: 12px; }
 .breadcrumb { color: var(--muted); font-size: .86rem; }
 .profile { display: flex; align-items: center; gap: 10px; }
-.notification { width: 38px; height: 38px; border: 0; border-radius: 10px; background: transparent; }
-.notification:hover { background: var(--surface); }
+.notification { width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); }
+.notification:hover { background: var(--surface); border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); }
 .profile-button { min-height: 60px; display: flex; align-items: center; gap: 11px; padding: 7px 11px 7px 8px; border: 1px solid var(--border); border-radius: 13px; background: var(--paper); color: var(--text); text-align: left; box-shadow: 0 5px 16px rgba(11,36,56,.06); }
 .profile-button:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: var(--surface); }
 .profile-copy { display: grid; gap: 2px; min-width: 150px; }
