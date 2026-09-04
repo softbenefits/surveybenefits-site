@@ -5,8 +5,18 @@ if (params.get('tenant') === 'horizon') body.classList.add('tenant');
 if (params.get('theme') === 'dark') body.classList.add('dark');
 if (params.get('mode') === 'impersonation') body.classList.add('impersonating');
 
-document.querySelectorAll('[data-toggle-menu]').forEach(button => {
-  button.addEventListener('click', () => document.querySelector('.sidebar')?.classList.toggle('open'));
+document.querySelectorAll('[data-toggle-sidebar]').forEach(button => {
+  button.addEventListener('click', () => {
+    const shell = document.querySelector('.app-shell');
+    const sidebar = document.querySelector('.sidebar');
+    if (window.matchMedia('(max-width: 900px)').matches) {
+      sidebar?.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(sidebar?.classList.contains('open')));
+      return;
+    }
+    shell?.classList.toggle('collapsed');
+    button.setAttribute('aria-expanded', String(!shell?.classList.contains('collapsed')));
+  });
 });
 
 document.querySelectorAll('form[data-prototype]').forEach(form => {
