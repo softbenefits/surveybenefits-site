@@ -52,6 +52,7 @@ p { line-height: 1.7; }
 .hero .eyebrow { color: #91cfff; }
 .actions { gap: 12px; flex-wrap: wrap; margin-top: 32px; }
 .hero .button.secondary { color: white; border-color: rgba(255,255,255,.4); }
+.hero .button.secondary:hover { background: rgba(30,110,190,.28); color: white; border-color: rgba(145,207,255,.9); box-shadow: 0 8px 24px rgba(5,25,38,.3); }
 .section { padding: 100px 0; }
 .section.tint { background: var(--surface); }
 .section-lead { max-width: 720px; margin-bottom: 44px; }
