@@ -174,7 +174,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .impersonating .sidebar { top: 48px; }
 .app-shell.collapsed { grid-template-columns: 82px 1fr; }
 .app-shell.collapsed .sidebar { width: 82px; }
-.app-shell.collapsed .sidebar-head { padding: 20px 15px; }
+.app-shell.collapsed .sidebar-head { padding: 20px 15px; border-bottom: 0; }
 .app-shell.collapsed .logo-full { display: none; }
 .app-shell.collapsed .sidebar-head .logo-symbol { display: block; }
 .app-shell.collapsed .sidebar-context { display: none; }
@@ -208,6 +208,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .auth-story > p { max-width: 600px; padding-block: 8px; font-size: .9rem; }
   .auth-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 2px; }
   .app-shell { grid-template-columns: 1fr; }
+  .app-shell.collapsed { grid-template-columns: 1fr; }
   .sidebar { transform: translateX(-100%); box-shadow: var(--shadow); }
   .sidebar.open { transform: translateX(0); }
   .app-main { grid-column: 1; }
