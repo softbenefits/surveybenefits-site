@@ -41,7 +41,7 @@ p { line-height: 1.7; }
 .site-header { position: absolute; z-index: 3; top: 0; left: 0; right: 0; padding: 26px 0; color: white; }
 .site-header .container, .top-nav, .actions, .prototype-nav { display: flex; align-items: center; }
 .site-header .container { justify-content: space-between; gap: 30px; }
-.logo { width: 238px; display: block; }
+.logo { width: 238px; height: auto; display: block; border-radius: 3px; }
 .top-nav { gap: 28px; }
 .top-nav a { font-size: .9rem; font-weight: 650; text-decoration: none; }
 .hero { min-height: 780px; display: grid; align-items: center; position: relative; color: white; overflow: hidden; background: var(--navy); }
@@ -67,7 +67,6 @@ p { line-height: 1.7; }
 .footer-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .footer-row .logo { width: 132px; color: var(--text); }
 .footer-row a { text-decoration: none; }
-.site-header .logo, .auth-visual .logo, .sidebar .logo { filter: brightness(0) invert(1); }
 .tenant-name, .tenant-links { display: none; }
 .tenant .platform-name, .tenant .platform-links { display: none; }
 .tenant .tenant-name { display: block; }
