@@ -152,7 +152,7 @@ p { line-height: 1.7; }
 .profile-button:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); background: var(--surface); }
 .profile-copy { display: grid; gap: 2px; min-width: 150px; }
 .profile-copy small { color: var(--muted); }
-.profile-chevron { color: var(--muted); font-size: 1.2rem; }
+.profile-chevron { width: 8px; height: 8px; margin: -4px 2px 0 5px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); }
 .avatar { width: 44px; height: 44px; overflow: hidden; flex: 0 0 44px; border-radius: 50%; background: var(--accent); color: white; display: grid; place-items: center; font-weight: 800; }
 .avatar img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .app-content { padding: 36px 30px 70px; max-width: 1500px; margin: auto; }
