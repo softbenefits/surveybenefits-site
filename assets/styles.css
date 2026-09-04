@@ -95,6 +95,8 @@ p { line-height: 1.7; }
 .small-link { color: var(--primary); font-weight: 700; font-size: .9rem; }
 .auth-divider { display: flex; align-items: center; gap: 14px; margin: 22px 0; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
 .auth-divider::before, .auth-divider::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+.auth-alternative { background: color-mix(in srgb, var(--primary) 10%, var(--paper)) !important; color: var(--primary) !important; border-color: color-mix(in srgb, var(--primary) 50%, var(--border)) !important; }
+.auth-alternative:hover { background: color-mix(in srgb, var(--primary) 18%, var(--paper)) !important; border-color: var(--primary) !important; box-shadow: 0 8px 22px color-mix(in srgb, var(--primary) 18%, transparent); }
 .auth-card .auth-alternative { border: 1px solid var(--border); }
 .notice { margin: 20px 0; padding: 15px; background: #e9f4ff; color: #164c78; border-radius: 10px; }
 
