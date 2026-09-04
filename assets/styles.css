@@ -67,6 +67,7 @@ p { line-height: 1.7; }
 .feature-list li { padding: 18px 20px; border-left: 3px solid var(--primary); background: var(--surface); }
 .cta { color: white; background: var(--navy); border-radius: 28px; padding: 42px 58px; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
 .cta h2 { margin: 0; max-width: 700px; }
+.cta .button { min-width: 240px; white-space: nowrap; flex-shrink: 0; }
 .content-footer { border-top: 1px solid var(--border); min-height: 68px; display: flex; align-items: center; color: var(--muted); font-size: .82rem; }
 .footer-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .footer-row .logo { width: 132px; color: var(--text); }
@@ -227,6 +228,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .section { padding: 72px 0; }
   .grid-3, .metrics { grid-template-columns: 1fr; }
   .cta { padding: 34px 26px; align-items: flex-start; flex-direction: column; }
+  .cta .button { width: 100%; }
   .auth-background { padding: 14px; }
   .auth-page { gap: 14px; }
   .auth-visual, .auth-panel { border-radius: 20px; }
