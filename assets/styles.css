@@ -259,7 +259,11 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .auth-panel { padding: 24px; }
   .auth-card .logo { margin-bottom: 36px; }
   .app-topbar, .app-content, .app-footer { padding-left: 18px; padding-right: 18px; }
-  .breadcrumb-row { margin-inline: -18px; padding-inline: 18px; }
+  .app-topbar { min-height: 72px; height: 72px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand crumb profile"; column-gap: 10px; padding-top: 0; padding-bottom: 0; }
+  .mobile-topline { display: contents; }
+  .mobile-brand { grid-area: brand; margin: 0; }
+  .breadcrumb-row { grid-area: crumb; margin: 0; padding: 0; border: 0; min-width: 0; }
+  .profile { grid-area: profile; }
   .mobile-brand img { width: 118px; height: 44px; }
   .profile-copy, .profile-chevron { display: none; }
   .profile-button { min-height: 44px; padding: 3px; border: 0; box-shadow: none; }
@@ -268,6 +272,13 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .table-card { overflow-x: auto; }
   .footer-row { justify-content: center; text-align: center; }
   .prototype-nav { left: 10px; right: 10px; overflow-x: auto; justify-content: flex-start; }
+}
+
+@media (max-width: 420px) {
+  .app-topbar { column-gap: 6px; padding-left: 12px; padding-right: 12px; }
+  .mobile-brand img { width: 96px; }
+  .breadcrumb { display: none; }
+  .profile { gap: 4px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
