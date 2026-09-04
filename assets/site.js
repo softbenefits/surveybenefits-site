@@ -8,26 +8,26 @@ if (params.get('mode') === 'impersonation') body.classList.add('impersonating');
 const sidebarToggleButtons = document.querySelectorAll('[data-toggle-sidebar]');
 
 function setSidebarOpen(isOpen) {
-  const shell = document.querySelector('.app-shell');
+  const shell = document.querySelector('.app-frame');
   const sidebar = document.querySelector('.sidebar');
   sidebar?.classList.toggle('open', isOpen);
-  shell?.classList.toggle('sidebar-open', isOpen);
+  shell?.classList.toggle('menu-movel-aberto', isOpen);
   sidebarToggleButtons.forEach(toggle => {
     toggle.setAttribute('aria-expanded', String(isOpen));
-    if (toggle.classList.contains('shell-toggle-edge')) toggle.textContent = isOpen ? '×' : '☰';
+    if (toggle.classList.contains('alternar-menu')) toggle.textContent = isOpen ? '×' : '☰';
   });
 }
 
 sidebarToggleButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const shell = document.querySelector('.app-shell');
+    const shell = document.querySelector('.app-frame');
     const sidebar = document.querySelector('.sidebar');
     if (window.matchMedia('(max-width: 900px)').matches) {
       setSidebarOpen(!(sidebar?.classList.contains('open') ?? false));
       return;
     }
-    shell?.classList.toggle('collapsed');
-    button.setAttribute('aria-expanded', String(!shell?.classList.contains('collapsed')));
+    shell?.classList.toggle('menu-recolhido');
+    button.setAttribute('aria-expanded', String(!shell?.classList.contains('menu-recolhido')));
   });
 });
 
