@@ -227,6 +227,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .mobile-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .shell-toggle-edge { position: static; margin-left: 0; }
   .app-topbar .shell-toggle-edge { position: relative; z-index: 6; }
+  .sidebar.open + .app-main .shell-toggle-edge { position: fixed; left: 14px; top: 14px; z-index: 10; }
   .mobile-brand { display: block; margin-right: auto; }
   .mobile-brand img { display: block; width: 142px; height: 50px; object-fit: contain; }
   .breadcrumb-row { order: initial; display: flex; align-items: center; margin-inline: -30px; padding: 0 30px; border-top: 1px solid var(--border); }
