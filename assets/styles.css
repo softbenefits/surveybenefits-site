@@ -123,6 +123,7 @@ p { line-height: 1.7; }
 
 .app-shell { min-height: 100vh; display: grid; grid-template-columns: 236px minmax(0, 1fr); background: var(--surface); }
 .sidebar { position: fixed; inset: 0 auto 0 0; width: 236px; background: var(--sidebar); color: white; display: grid; grid-template-rows: auto 1fr auto; transition: width .2s ease; z-index: 4; }
+.menu-overlay, .sidebar-close { display: none; }
 .sidebar-head { padding: 25px 18px 0; }
 .sidebar-head .logo { width: 100%; max-width: 205px; }
 .sidebar-head .logo-symbol { display: none; width: 48px; height: 48px; margin-inline: auto; padding: 5px; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; background: rgba(255,255,255,.96); box-shadow: 0 5px 16px rgba(0,0,0,.18); object-fit: contain; object-position: center; }
@@ -211,8 +212,15 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .auth-highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 2px; }
   .app-shell { grid-template-columns: 1fr; }
   .app-shell.collapsed { grid-template-columns: 1fr; }
-  .sidebar { transform: translateX(-100%); box-shadow: var(--shadow); }
+  .sidebar { z-index: 40; transform: translateX(-100%); box-shadow: var(--shadow); }
   .sidebar.open { transform: translateX(0); }
+  .menu-overlay { position: fixed; z-index: 35; inset: 0; display: none; border: 0; background: rgba(5,25,38,.62); }
+  .app-shell.sidebar-open .menu-overlay { display: block; }
+  .sidebar-close { display: inline-grid; grid-column: 2; place-items: center; width: 34px; height: 34px; border: 0; border-radius: 7px; color: white; background: rgba(255,255,255,.08); font-size: 1.45rem; line-height: 1; }
+  .sidebar-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; column-gap: 10px; }
+  .sidebar-head > a { grid-column: 1; min-width: 0; }
+  .sidebar-head .logo { width: min(156px, 100%); }
+  .sidebar-context { grid-column: 1 / -1; }
   .app-shell.collapsed .sidebar.open { width: 236px; }
   .app-shell.collapsed .sidebar.open .sidebar-head { padding: 25px 18px 20px; border-bottom: 1px solid rgba(255,255,255,.12); }
   .app-shell.collapsed .sidebar.open .logo-full { display: block; }

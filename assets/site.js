@@ -5,20 +5,34 @@ if (params.get('tenant') === 'horizon') body.classList.add('tenant');
 if (params.get('theme') === 'dark') body.classList.add('dark');
 if (params.get('mode') === 'impersonation') body.classList.add('impersonating');
 
-document.querySelectorAll('[data-toggle-sidebar]').forEach(button => {
+const sidebarToggleButtons = document.querySelectorAll('[data-toggle-sidebar]');
+
+function setSidebarOpen(isOpen) {
+  const shell = document.querySelector('.app-shell');
+  const sidebar = document.querySelector('.sidebar');
+  sidebar?.classList.toggle('open', isOpen);
+  shell?.classList.toggle('sidebar-open', isOpen);
+  sidebarToggleButtons.forEach(toggle => {
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    if (toggle.classList.contains('shell-toggle-edge')) toggle.textContent = isOpen ? '×' : '☰';
+  });
+}
+
+sidebarToggleButtons.forEach(button => {
   button.addEventListener('click', () => {
     const shell = document.querySelector('.app-shell');
     const sidebar = document.querySelector('.sidebar');
     if (window.matchMedia('(max-width: 900px)').matches) {
-      sidebar?.classList.toggle('open');
-      const isOpen = sidebar?.classList.contains('open') ?? false;
-      button.setAttribute('aria-expanded', String(isOpen));
-      button.textContent = isOpen ? '×' : '☰';
+      setSidebarOpen(!(sidebar?.classList.contains('open') ?? false));
       return;
     }
     shell?.classList.toggle('collapsed');
     button.setAttribute('aria-expanded', String(!shell?.classList.contains('collapsed')));
   });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && window.matchMedia('(max-width: 900px)').matches) setSidebarOpen(false);
 });
 
 document.querySelectorAll('form[data-prototype]').forEach(form => {
