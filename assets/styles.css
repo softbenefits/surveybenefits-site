@@ -273,7 +273,6 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .profile-copy, .profile-chevron { display: none; }
   .profile-button { min-height: 44px; padding: 3px; border: 0; box-shadow: none; }
   .avatar { width: 40px; height: 40px; flex-basis: 40px; }
-  .fullscreen-toggle { display: none; }
   .app-content { padding: 25px 16px 92px; }
   .page-head { align-items: flex-start; flex-direction: column; }
   .table-card { overflow-x: auto; }
