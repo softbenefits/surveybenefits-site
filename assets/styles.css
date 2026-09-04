@@ -126,10 +126,10 @@ p { line-height: 1.7; }
 .sidebar-head { padding: 25px 18px 20px; border-bottom: 1px solid rgba(255,255,255,.12); }
 .sidebar-head .logo { width: 205px; }
 .sidebar-head .logo-symbol { display: none; width: 48px; height: 48px; margin-inline: auto; padding: 5px; border: 1px solid rgba(255,255,255,.72); border-radius: 50%; background: rgba(255,255,255,.96); box-shadow: 0 5px 16px rgba(0,0,0,.18); object-fit: contain; object-position: center; }
-.sidebar-context { display: grid; gap: 4px; margin-top: 20px; padding: 15px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 12px; }
+.sidebar-context { display: grid; gap: 5px; margin-top: 20px; padding: 16px; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.09); border-radius: 12px; }
 .context-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.58); }
-.context-name { font-weight: 750; margin-top: 5px; }
-.context-session { display: grid; gap: 3px; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.66); font-size: .72rem; line-height: 1.35; }
+.context-name { font-weight: 750; line-height: 1.25; margin-top: 5px; }
+.context-session { display: grid; gap: 3px; margin-top: 12px; padding-top: 4px; color: rgba(255,255,255,.66); font-size: .72rem; line-height: 1.4; }
 .context-session strong { color: white; font-size: .8rem; }
 .side-nav { overflow-y: auto; padding: 18px 12px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.25) transparent; }
 .side-nav a { display: flex; gap: 12px; align-items: center; padding: 12px 14px; margin: 3px 0; border-radius: 10px; color: rgba(255,255,255,.72); text-decoration: none; font-size: .9rem; }
