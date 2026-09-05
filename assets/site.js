@@ -49,17 +49,17 @@ if (isAuthenticatedShell) {
 
 function accountMenuMarkup() {
   return `<div class="menu-conta" data-account-menu hidden>
-    <div class="menu-conta-cabecalho"><span class="avatar">RM</span><span><strong>Rui Martins</strong><small class="platform-name">Administrador da Plataforma</small><small class="tenant-name">Administrador do Tenant</small></span></div>
+    <div class="menu-conta-cabecalho"><span class="avatar">RM</span><span><strong>Rui Martins</strong><small class="menu-email">rui.martins@softbenefits.pt</small><small class="menu-role platform-name">Administrador da Plataforma</small><small class="menu-role tenant-name">Administrador do Tenant</small></span></div>
     <div class="menu-conta-separador"></div>
-    <button class="menu-conta-item menu-aparencia" type="button" data-appearance-menu aria-expanded="false"><span><strong>Aparência</strong><small data-appearance-current></small></span><span aria-hidden="true">›</span></button>
+    <button class="menu-conta-item menu-aparencia" type="button" data-appearance-menu aria-expanded="false"><span><i aria-hidden="true">◐</i><strong>Aparência</strong></span><b data-appearance-current></b></button>
     <div class="submenu-aparencia" data-appearance-submenu hidden>
-      <label><input type="radio" name="appearance-menu" value="system" data-appearance-option> Sistema</label>
-      <label><input type="radio" name="appearance-menu" value="light" data-appearance-option> Claro</label>
-      <label><input type="radio" name="appearance-menu" value="dark" data-appearance-option> Escuro</label>
+      <label><input type="radio" name="appearance-menu" value="system" data-appearance-option><span>Sistema</span></label>
+      <label><input type="radio" name="appearance-menu" value="light" data-appearance-option><span>Claro</span></label>
+      <label><input type="radio" name="appearance-menu" value="dark" data-appearance-option><span>Escuro</span></label>
     </div>
-    <a class="menu-conta-item" href="definicoes-pessoais.html${window.location.search}"><span>Definições pessoais</span></a>
+    <a class="menu-conta-item" href="definicoes-pessoais.html${window.location.search}"><span><i aria-hidden="true">⚙</i>Definições pessoais</span></a>
     <div class="menu-conta-separador"></div>
-    <a class="menu-conta-item menu-logout" href="login.html"><span>Terminar sessão</span></a>
+    <a class="menu-conta-item menu-logout" href="login.html"><span><i aria-hidden="true">↪</i>Terminar sessão</span></a>
   </div>`;
 }
 
