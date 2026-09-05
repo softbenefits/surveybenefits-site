@@ -345,6 +345,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .tenant .marca-plataforma { display:none; }
 .tenant .marca-tenant.marca-completa { display:block; }
 .tenant .marca-tenant.marca-simbolo { display:none; }
+.tenant .marca-topbar .marca-tenant.marca-completa { display:block!important; }
 .menu-recolhido .tenant .marca-tenant.marca-completa { display:none; }
 .menu-recolhido .tenant .marca-tenant.marca-simbolo { display:block; }
 .tenant .sidebar .marca-tenant.marca-completa { content:url("horizon-logo-negative.svg?v=1"); }
@@ -381,3 +382,4 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .marca-topbar .marca-plataforma { content:url("logo-oficial-transparente.png?v=17"); }
 .dark .marca-topbar .marca-plataforma { content:url("logo-oficial-negativo.png?v=17"); }
 .dark .marca-topbar .marca-tenant { content:url("horizon-logo-negative.svg?v=1"); }
+@media (max-width:820px) { .tenant .marca-topbar { width:116px; height:38px; display:flex; align-items:center; gap:.45rem; }.tenant .marca-topbar .marca-tenant { display:none!important; }.tenant .marca-topbar::before { content:"H"; width:2rem; height:2rem; display:grid; flex:0 0 2rem; place-items:center; color:#fff; background:var(--accent); border-radius:.5rem; font-weight:850; }.tenant .marca-topbar::after { content:"Horizon"; color:var(--text); font-size:.9rem; font-weight:800; letter-spacing:-.02em; }.dark.tenant .marca-topbar::after { color:#fff; } }
