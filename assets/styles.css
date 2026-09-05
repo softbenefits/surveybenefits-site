@@ -279,7 +279,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
   .auth-highlights { grid-template-columns: 1fr; gap: 8px; }
   .auth-highlight strong { font-size: .76rem; }
   .auth-highlight small { font-size: .65rem; }
-  .auth-visual > small { font-size: .72rem; }
+  .auth-visual > small { margin-top: 1rem; font-size: .72rem; }
   .auth-panel { padding: 28px; }
   .auth-card .logo { width: min(230px, 100%); }
   .auth-panel { padding: 24px; }
