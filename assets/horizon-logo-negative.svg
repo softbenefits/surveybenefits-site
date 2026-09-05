@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" role="img" aria-labelledby="title">
+  <title>Horizon</title>
+  <rect x="0" y="0" width="72" height="72" rx="19" fill="#007f5f"/>
+  <path d="M20 18v36M52 18v36M20 36h32" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="8"/>
+  <circle cx="36" cy="36" r="4" fill="#b9f0dd"/>
+  <text x="91" y="45" fill="#fff" font-family="Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="-.7">Horizon</text>
+</svg>

@@ -19,13 +19,6 @@
   --text: #14212b;
   --muted: #607181;
   --border: #d8e1e8;
-  --accent: var(--brand-primary);
-  --accent-hover: var(--brand-hover);
-  --accent-soft: var(--brand-soft);
-  --accent-tint: var(--brand-tint);
-  --toast-success: var(--brand-primary);
-  --sidebar: var(--brand-sidebar);
-  --sidebar-deep: var(--brand-sidebar-deep);
   --radius: 16px;
   --shadow: 0 20px 55px rgba(11, 36, 56, .12);
   font-family: Inter, "Segoe UI", sans-serif;
@@ -35,7 +28,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--text); overflow-x: hidden; }
+body { --accent: var(--brand-primary); --accent-hover: var(--brand-hover); --accent-soft: var(--brand-soft); --accent-tint: var(--brand-tint); --toast-success: var(--brand-primary); --sidebar: var(--brand-sidebar); --sidebar-deep: var(--brand-sidebar-deep); margin: 0; background: var(--paper); color: var(--text); overflow-x: hidden; }
 body.dark { --paper: #10202b; --surface: #152b39; --text: #eef5f8; --muted: #aec0ca; --border: #284452; --brand-soft: color-mix(in srgb, var(--brand-primary) 19%, var(--surface)); --brand-tint: color-mix(in srgb, var(--brand-primary) 10%, var(--paper)); --brand-focus: color-mix(in srgb, var(--brand-primary) 72%, white); }
 /* O Tenant fornece só a cor principal; os restantes tokens são derivados pelo template. */
 body.tenant { --brand-primary: #007f5f; --brand-hover: color-mix(in srgb, var(--brand-primary) 80%, black); --brand-sidebar: color-mix(in srgb, var(--brand-primary) 60%, #0b2438); --brand-sidebar-deep: color-mix(in srgb, var(--brand-primary) 45%, #041b2a); }
@@ -350,8 +343,11 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 /* Marca do Tenant: duas peças obrigatórias e uma paleta derivada da cor principal. */
 .marca-tenant { display:none; }
 .tenant .marca-plataforma { display:none; }
-.tenant .marca-tenant { display:block; }
-.tenant .sidebar .marca-tenant.marca-completa { filter:brightness(0) invert(1); }
+.tenant .marca-tenant.marca-completa { display:block; }
+.tenant .marca-tenant.marca-simbolo { display:none; }
+.menu-recolhido .tenant .marca-tenant.marca-completa { display:none; }
+.menu-recolhido .tenant .marca-tenant.marca-simbolo { display:block; }
+.tenant .sidebar .marca-tenant.marca-completa { content:url("horizon-logo-negative.svg?v=1"); }
 .tenant .app-frame { background:var(--accent-tint); }
 .tenant .app-frame .sidebar { background:linear-gradient(180deg,var(--sidebar) 0%,var(--sidebar-deep) 100%); }
 .tenant .contexto { background:color-mix(in srgb,var(--accent) 18%,rgba(255,255,255,.08)); border-color:color-mix(in srgb,var(--accent) 40%,rgba(255,255,255,.12)); }
@@ -380,3 +376,8 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 @media (max-width:600px) { .appearance-option { min-height:4.5rem; padding:.6rem .3rem; }.appearance-option small { display:none; } }
 
 @media (max-width:1000px) { .settings-top-grid { grid-template-columns:1fr; } }
+
+/* A marca da Plataforma troca de variante com a Aparência; a marca do Tenant mantém o seu próprio asset. */
+.marca-topbar .marca-plataforma { content:url("logo-oficial-transparente.png?v=17"); }
+.dark .marca-topbar .marca-plataforma { content:url("logo-oficial-negativo.png?v=17"); }
+.dark .marca-topbar .marca-tenant { content:url("horizon-logo-negative.svg?v=1"); }
