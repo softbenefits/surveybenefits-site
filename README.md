@@ -14,7 +14,7 @@ O produto e a documentação técnica vivem num repositório privado separado.
 Cada Tenant fornece uma pequena identidade de marca, sem alterar a estrutura do produto:
 
 - **Cor principal** em hexadecimal (`#RRGGBB`). O shell deriva automaticamente a cor de hover, a superfície clara e o fundo escuro da barra lateral.
-- **Logótipo horizontal**: SVG preferencialmente (ou PNG transparente), proporção aproximada **4:1**; área de desenho recomendada **300 × 72 px**. No shell é apresentado até **172 × 43 px**.
-- **Ícone de marca**: SVG preferencialmente (ou PNG transparente), quadrado; área de desenho recomendada **72 × 72 px**. No menu recolhido é apresentado a **45 × 45 px**.
+- **Logótipo horizontal**: PNG ou WebP transparente, proporção aproximada **4:1**; ficheiro recomendado **600 × 144 px**. No shell é apresentado até **172 × 43 px**.
+- **Ícone de marca**: PNG ou WebP transparente, quadrado; ficheiro recomendado **144 × 144 px**. No menu recolhido é apresentado a **45 × 45 px**.
 
-Os ficheiros devem ter fundo transparente e uma margem de segurança de pelo menos 10%. O exemplo Horizon usa `horizon-logo.svg` e `horizon-mark.svg`.
+Os ficheiros devem ter fundo transparente e uma margem de segurança de pelo menos 10%. O exemplo Horizon usa SVG apenas por ser um asset estático controlado do protótipo.
