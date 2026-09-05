@@ -348,6 +348,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .tenant .marca-topbar .marca-tenant.marca-completa { display:block!important; }
 .menu-recolhido .tenant .marca-tenant.marca-completa { display:none; }
 .menu-recolhido .tenant .marca-tenant.marca-simbolo { display:block; }
+.menu-recolhido .tenant .marca-simbolo { transform:none; }
 .tenant .sidebar .marca-tenant.marca-completa { content:url("horizon-logo-negative.svg?v=1"); }
 .tenant .app-frame { background:var(--accent-tint); }
 .tenant .app-frame .sidebar { background:linear-gradient(180deg,var(--sidebar) 0%,var(--sidebar-deep) 100%); }
