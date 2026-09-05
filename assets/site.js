@@ -2,6 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const body = document.body;
 const appearanceStorageKey = 'surveybenefits.appearance';
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+const isAuthenticatedShell = Boolean(document.querySelector('.app-frame'));
 
 if (params.get('tenant') === 'horizon') body.classList.add('tenant');
 if (params.get('mode') === 'impersonation') body.classList.add('impersonating');
@@ -41,8 +42,10 @@ function applyAppearance(value, announce = false) {
   }
 }
 
-applyAppearance(getAppearance());
-systemTheme.addEventListener?.('change', () => { if (getAppearance() === 'system') applyAppearance('system'); });
+if (isAuthenticatedShell) {
+  applyAppearance(getAppearance());
+  systemTheme.addEventListener?.('change', () => { if (getAppearance() === 'system') applyAppearance('system'); });
+}
 
 function accountMenuMarkup() {
   return `<div class="menu-conta" data-account-menu hidden>
