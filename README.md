@@ -5,15 +5,15 @@ Protótipo estático da foundation UX/UI M0.5 do SurveyBenefits.
 - não implementa autenticação nem funcionalidades de negócio;
 - não recolhe nem envia credenciais;
 - usa exclusivamente dados fictícios;
-- demonstra landing, autenticação, shells de Plataforma e Tenant, tema escuro e `Atuar como`.
+- demonstra landing, autenticação, shells de Plataforma e Tenant, Aparência clara/escura e `Atuar como`.
 
 O produto e a documentação técnica vivem num repositório privado separado.
 
 ## Personalização de Tenant
 
-Cada Tenant fornece uma pequena identidade de marca, sem alterar a estrutura do produto:
+Cada Tenant fornece uma pequena identidade de marca, sem alterar a estrutura do produto. A Aparência (`Sistema`, `Claro`, `Escuro`) é uma preferência pessoal do utilizador autenticado e adapta superfícies neutras; não troca o logótipo nem a cor de marca.
 
-- **Cor principal** em hexadecimal (`#RRGGBB`). O shell deriva automaticamente a cor de hover, a superfície clara e o fundo escuro da barra lateral.
+- **Cor principal** em hexadecimal (`#RRGGBB`). É o único input de cor: o shell deriva automaticamente hover, superfícies claras/escuras, seleção, foco e fundos escuros da barra lateral. Não existe cor secundária livre nem CSS enviado pelo Tenant.
 - **Logótipo horizontal**: PNG ou WebP transparente, proporção aproximada **4:1**; ficheiro recomendado **600 × 144 px**. No shell é apresentado até **172 × 43 px**.
 - **Ícone de marca**: PNG ou WebP transparente, quadrado; ficheiro recomendado **144 × 144 px**. No menu recolhido é apresentado a **45 × 45 px**.
 
