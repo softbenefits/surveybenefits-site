@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Definições pessoais — SurveyBenefits</title>
   <link rel="icon" type="image/png" href="assets/icon-surveybenefits.png?v=15">
-  <link rel="stylesheet" href="assets/styles.css?v=44">
+  <link rel="stylesheet" href="assets/styles.css?v=45">
 </head>
 <body>
   <div class="impersonation"><span><strong>Atuar como:</strong> Marta Silva · Horizon — sessão de suporte auditada</span><a class="button secondary" href="app">Terminar</a></div>
@@ -25,17 +25,19 @@
       <main class="app-content">
         <div class="settings-page">
           <header class="settings-intro"><div class="eyebrow">Conta</div><h1>Definições pessoais</h1><p>Faça a gestão dos seus dados, aparência e palavra-passe.</p></header>
-          <section class="settings-section" aria-labelledby="dados-pessoais"><div class="settings-section-head"><h2 id="dados-pessoais">Dados pessoais</h2><p>Estes dados identificam a sua conta na aplicação.</p></div>
+          <div class="settings-top-grid">
+          <section class="settings-section" aria-labelledby="dados-pessoais"><div class="settings-section-head"><div class="eyebrow">Identidade</div><h2 id="dados-pessoais">Dados pessoais</h2><p>Estes dados identificam a sua conta na aplicação.</p></div>
             <form class="settings-form" data-profile-form novalidate>
               <div class="profile-avatar-row"><div class="profile-avatar" data-avatar-preview role="img" aria-label="Avatar de Rui Martins">RM</div><div class="avatar-actions"><button class="button secondary small" type="button" data-avatar-trigger>Substituir avatar</button><small>PNG, JPG ou WebP. Simulação apenas no protótipo.</small><input data-avatar-input type="file" accept="image/png,image/jpeg,image/webp" hidden></div></div>
               <div class="settings-fields"><div class="field-group"><label for="firstName">Primeiro nome</label><input id="firstName" name="firstName" type="text" value="Rui" required aria-describedby="firstName-error"><p class="field-error" id="firstName-error" data-error-for="firstName" hidden>Indique o primeiro nome.</p></div><div class="field-group"><label for="lastName">Último nome</label><input id="lastName" name="lastName" type="text" value="Martins" required aria-describedby="lastName-error"><p class="field-error" id="lastName-error" data-error-for="lastName" hidden>Indique o último nome.</p></div><div class="field-group full"><label for="email">Email</label><input id="email" name="email" type="email" value="rui.martins@softbenefits.pt" readonly aria-describedby="email-help"><p class="field-help" id="email-help">O email identifica a conta e não pode ser alterado aqui.</p></div></div>
               <div class="settings-actions"><button class="button" type="submit">Guardar alterações</button></div>
             </form>
           </section>
-          <section class="settings-section" aria-labelledby="aparencia"><div class="settings-section-head"><h2 id="aparencia">Aparência</h2><p>Escolha como pretende visualizar a aplicação.</p></div>
+          <section class="settings-section" aria-labelledby="aparencia"><div class="settings-section-head"><div class="eyebrow">Experiência</div><h2 id="aparencia">Aparência</h2><p>Escolha como pretende visualizar a aplicação.</p></div>
             <div class="appearance-options" role="radiogroup" aria-label="Preferência de aparência"><label class="appearance-option"><input type="radio" name="appearance-settings" value="system" data-appearance-option><strong>Sistema</strong><small>Usa a preferência do dispositivo.</small></label><label class="appearance-option"><input type="radio" name="appearance-settings" value="light" data-appearance-option><strong>Claro</strong><small>Superfícies claras.</small></label><label class="appearance-option"><input type="radio" name="appearance-settings" value="dark" data-appearance-option><strong>Escuro</strong><small>Superfícies escuras.</small></label></div>
           </section>
-          <section class="settings-section" aria-labelledby="palavra-passe"><div class="settings-section-head"><h2 id="palavra-passe">Palavra-passe</h2><p>Use uma password forte e exclusiva para a sua conta.</p></div>
+          </div>
+          <section class="settings-section settings-security" aria-labelledby="palavra-passe"><div class="settings-section-head"><div class="eyebrow">Segurança</div><h2 id="palavra-passe">Alterar palavra-passe</h2><p>Use uma password forte e exclusiva para a sua conta.</p></div>
             <form class="settings-form" data-password-form novalidate><div class="settings-fields"><div class="field-group full password-control"><label for="currentPassword">Password atual</label><input id="currentPassword" name="currentPassword" type="password" autocomplete="current-password" data-password-input aria-describedby="currentPassword-error"><p class="field-error" id="currentPassword-error" data-error-for="currentPassword" hidden></p></div><div class="field-group"><label for="newPassword">Nova password</label><input id="newPassword" name="newPassword" type="password" autocomplete="new-password" data-password-input aria-describedby="newPassword-error"><p class="field-error" id="newPassword-error" data-error-for="newPassword" hidden></p></div><div class="field-group"><label for="confirmPassword">Confirmar nova password</label><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" data-password-input aria-describedby="confirmPassword-error"><p class="field-error" id="confirmPassword-error" data-error-for="confirmPassword" hidden></p></div></div><div class="settings-actions"><button class="button" type="submit">Alterar palavra-passe</button></div></form>
           </section>
         </div>
