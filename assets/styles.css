@@ -318,4 +318,4 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 /* Ícones finais do template: chevron SVG e símbolo branco no menu recolhido. */
 .seta-conta { width:20px; height:24px; display:grid; place-items:center; color:var(--muted); }
 .seta-conta svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-.menu-recolhido .marca-simbolo { filter:brightness(0) invert(1); opacity:.94; }
+.menu-recolhido .marca-simbolo { filter:brightness(0) invert(1); opacity:.94; transform:translateY(-6px); }
