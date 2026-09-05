@@ -79,6 +79,9 @@ p { line-height: 1.7; }
 .tenant .side-nav .tenant-links { display: block; }
 .tenant .app-content .eyebrow { color: var(--accent); }
 .tenant .app-shell .button { background: var(--accent); }
+.tenant .app-frame .button { background: var(--accent); }
+.tenant .menu-principal .platform-links { display: none; }
+.tenant .menu-principal .tenant-links { display: grid; gap: .28rem; }
 
 .auth-background { min-height: 100vh; padding: 30px 20px; background: radial-gradient(circle at 80% 10%, rgba(30,110,190,.22), transparent 32%), var(--navy); }
 .auth-page { width: min(1120px, 100%); min-height: min(720px, calc(100vh - 60px)); margin: auto; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(390px,.92fr); overflow: hidden; background: var(--surface); border: 1px solid rgba(255,255,255,.18); border-radius: 30px; box-shadow: 0 30px 90px rgba(0,0,0,.34); }
