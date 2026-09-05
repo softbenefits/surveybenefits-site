@@ -327,3 +327,7 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 .topbar-utilities { display:flex; align-items:center; gap:9px; }
 .acoes-topbar { gap:16px; }
 @media (max-width:820px) { .acoes-topbar { gap:16px; } }
+
+/* Regra original do PescaLog: a seta só existe a partir do layout tablet. */
+@media (max-width:820px) { .topbar .identidade,.topbar .seta-conta { display:none; } }
+@media (min-width:601px) and (max-width:820px) { .topbar .identidade,.topbar .seta-conta { display:grid; } }
