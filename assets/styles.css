@@ -4,15 +4,28 @@
 :root {
   --primary: #1e6ebe;
   --primary-hover: #185a9c;
+  /* Inputs e tokens do contexto Plataforma. O shell autenticado consome aliases semânticos. */
+  --brand-primary: #1e6ebe;
+  --brand-on-primary: #fff;
+  --brand-hover: #185a9c;
+  --brand-soft: color-mix(in srgb, var(--brand-primary) 10%, var(--paper));
+  --brand-tint: color-mix(in srgb, var(--brand-primary) 5%, var(--paper));
+  --brand-focus: color-mix(in srgb, var(--brand-primary) 60%, white);
+  --brand-sidebar: #0b2438;
+  --brand-sidebar-deep: #071a2a;
   --navy: #0b2438;
   --surface: #f4f7fa;
   --paper: #fff;
   --text: #14212b;
   --muted: #607181;
   --border: #d8e1e8;
-  --accent: var(--primary);
-  --toast-success: var(--primary);
-  --sidebar: var(--navy);
+  --accent: var(--brand-primary);
+  --accent-hover: var(--brand-hover);
+  --accent-soft: var(--brand-soft);
+  --accent-tint: var(--brand-tint);
+  --toast-success: var(--brand-primary);
+  --sidebar: var(--brand-sidebar);
+  --sidebar-deep: var(--brand-sidebar-deep);
   --radius: 16px;
   --shadow: 0 20px 55px rgba(11, 36, 56, .12);
   font-family: Inter, "Segoe UI", sans-serif;
@@ -23,12 +36,13 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--text); overflow-x: hidden; }
-body.dark { --paper: #10202b; --surface: #152b39; --text: #eef5f8; --muted: #aec0ca; --border: #284452; }
-body.tenant { --accent: #007f5f; --accent-hover: #00664c; --accent-soft: #e3f4ee; --accent-tint: #f1faf7; --sidebar: #075a4b; --sidebar-deep: #043f35; --toast-success: var(--accent); }
+body.dark { --paper: #10202b; --surface: #152b39; --text: #eef5f8; --muted: #aec0ca; --border: #284452; --brand-soft: color-mix(in srgb, var(--brand-primary) 19%, var(--surface)); --brand-tint: color-mix(in srgb, var(--brand-primary) 10%, var(--paper)); --brand-focus: color-mix(in srgb, var(--brand-primary) 72%, white); }
+/* O Tenant fornece só a cor principal; os restantes tokens são derivados pelo template. */
+body.tenant { --brand-primary: #007f5f; --brand-hover: color-mix(in srgb, var(--brand-primary) 80%, black); --brand-sidebar: color-mix(in srgb, var(--brand-primary) 60%, #0b2438); --brand-sidebar-deep: color-mix(in srgb, var(--brand-primary) 45%, #041b2a); }
 a { color: inherit; }
 button, input { font: inherit; }
 button, .button { cursor: pointer; }
-:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 60%, white); outline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--brand-focus); outline-offset: 3px; }
 .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
 .eyebrow { color: var(--primary); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 h1, h2, h3, .brand { font-family: "Plus Jakarta Sans", Inter, sans-serif; }
