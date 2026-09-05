@@ -23,7 +23,7 @@
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--paper); color: var(--text); overflow-x: hidden; }
 body.dark { --paper: #10202b; --surface: #152b39; --text: #eef5f8; --muted: #aec0ca; --border: #284452; }
-body.tenant { --accent: #007f5f; --sidebar: #063f34; }
+body.tenant { --accent: #007f5f; --accent-hover: #00664c; --accent-soft: #e3f4ee; --accent-tint: #f1faf7; --sidebar: #075a4b; --sidebar-deep: #043f35; }
 a { color: inherit; }
 button, input { font: inherit; }
 button, .button { cursor: pointer; }
@@ -331,3 +331,15 @@ th { color: var(--muted); font-size: .76rem; text-transform: uppercase; letter-s
 /* Regra original do PescaLog: a seta só existe a partir do layout tablet. */
 @media (max-width:820px) { .topbar .identidade,.topbar .seta-conta { display:none; } }
 @media (min-width:601px) and (max-width:820px) { .topbar .identidade,.topbar .seta-conta { display:grid; } }
+
+/* Marca do Tenant: duas peças obrigatórias e uma paleta derivada da cor principal. */
+.marca-tenant { display:none; }
+.tenant .marca-plataforma { display:none; }
+.tenant .marca-tenant { display:block; }
+.tenant .sidebar .marca-tenant.marca-completa { filter:brightness(0) invert(1); }
+.tenant .app-frame { background:var(--accent-tint); }
+.tenant .app-frame .sidebar { background:linear-gradient(180deg,var(--sidebar) 0%,var(--sidebar-deep) 100%); }
+.tenant .contexto { background:color-mix(in srgb,var(--accent) 18%,rgba(255,255,255,.08)); border-color:color-mix(in srgb,var(--accent) 40%,rgba(255,255,255,.12)); }
+.tenant .pill { background:var(--accent-soft); color:var(--accent-hover); }
+.tenant .app-content .metric:first-child { border-color:color-mix(in srgb,var(--accent) 28%,var(--border)); }
+.tenant .marca::after { display:none; }
