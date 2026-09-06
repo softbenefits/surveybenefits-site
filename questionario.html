@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novo questionário — SurveyBenefits</title>
+  <link rel="icon" type="image/png" href="assets/icon-surveybenefits.png?v=15">
+  <link rel="stylesheet" href="assets/styles.css?v=64">
+</head>
+<body class="tenant">
+  <div class="app-frame"><button class="menu-overlay" type="button" data-toggle-sidebar aria-label="Fechar navegação"></button>
+    <aside class="sidebar">
+      <div class="sidebar-cabecalho"><a class="marca" href="app.html?tenant=horizon"><img class="marca-completa marca-plataforma" src="assets/logo-oficial-negativo.png?v=17" alt="SurveyBenefits"><img class="marca-completa marca-tenant" src="assets/horizon-logo.svg?v=1" alt="Horizon"><img class="marca-simbolo marca-plataforma" src="assets/icon-surveybenefits.png?v=15" alt=""><img class="marca-simbolo marca-tenant" src="assets/horizon-mark.svg?v=1" alt="Horizon"></a><button class="fechar-menu" type="button" data-toggle-sidebar aria-label="Fechar navegação">×</button></div>
+      <section class="contexto" aria-label="Contexto atual"><small>CONTEXTO ATUAL</small><strong class="tenant-name">Horizon</strong><span class="tenant-name">A sua organização</span><span class="ultimo-acesso">Sessão iniciada hoje, 09:18</span></section>
+      <nav class="menu-principal" aria-label="Navegação administrativa"><a href="app.html?tenant=horizon"><span class="icone-menu">⌂</span><span class="texto-menu">Dashboard</span></a><div class="tenant-links"><a class="active" href="questionarios.html?tenant=horizon"><span class="icone-menu">▤</span><span class="texto-menu">Questionários</span></a><a href="#"><span class="icone-menu">✓</span><span class="texto-menu">Aprovações</span></a><a href="#"><span class="icone-menu">◎</span><span class="texto-menu">Participantes</span></a></div></nav>
+      <div class="menu-secundario"><a href="login.html"><span class="icone-menu">↪</span><span class="texto-menu">Terminar sessão</span></a></div>
+    </aside>
+    <div class="app-main">
+      <header class="topbar"><button class="alternar-menu" type="button" data-toggle-sidebar aria-label="Alternar menu principal" aria-expanded="true">☰</button><a class="marca-topbar" href="app.html?tenant=horizon"><img class="marca-topbar-completa marca-plataforma" src="assets/logo-oficial.jpg?v=17" alt="SurveyBenefits"><img class="marca-topbar-completa marca-tenant" src="assets/horizon-logo.svg?v=1" alt="Horizon"></a><div class="breadcrumb"><span>Horizon</span><b aria-hidden="true">/</b><a href="questionarios.html?tenant=horizon">Questionários</a><b aria-hidden="true">/</b><strong data-form-breadcrumb>Novo</strong></div><div class="acoes-topbar"><div class="topbar-utilities"><button class="notificacoes" type="button" aria-label="Notificações">🔔</button><button class="fullscreen-toggle" type="button" data-fullscreen-toggle aria-label="Maximizar ecrã" title="Maximizar ecrã"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg></button></div><div class="conta"><button class="botao-conta" type="button" aria-label="Abrir menu de Rui Martins"><span class="avatar">RM</span><span class="identidade"><strong>Rui Martins</strong><small>Administrador do Tenant</small></span><span class="seta-conta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></div></div></header>
+      <main class="app-content">
+        <div class="questionario-page">
+          <header class="questionario-intro"><a class="back-link" href="questionarios.html?tenant=horizon">← Voltar aos questionários</a><div class="eyebrow">Questionário em preparação</div><h1 data-form-title>Novo questionário</h1><p>Defina os dados base. As perguntas e a publicação entram em slices posteriores.</p></header>
+          <section class="questionario-card" aria-labelledby="dados-base-title">
+            <header><div><h2 id="dados-base-title">Dados base</h2><p>O questionário será guardado no estado <span class="draft-pill">Criado</span>.</p></div><div class="questionario-owner"><small>Responsável</small><strong>Rui Martins</strong></div></header>
+            <form class="questionario-form" data-questionnaire-form novalidate>
+              <div class="field-group full"><label for="questionnaireTitle">Título <span aria-hidden="true">*</span></label><input id="questionnaireTitle" name="title" type="text" minlength="3" maxlength="150" autocomplete="off" aria-describedby="title-help title-error" data-questionnaire-title><div class="field-meta"><small id="title-help">Entre 3 e 150 caracteres.</small><small><span data-title-count>0</span>/150</small></div><p class="field-error" id="title-error" data-error-for="title" hidden></p></div>
+              <div class="field-group full"><label for="questionnaireDescription">Descrição <small>(opcional)</small></label><textarea id="questionnaireDescription" name="description" rows="6" maxlength="1000" aria-describedby="description-help description-error" data-questionnaire-description></textarea><div class="field-meta"><small id="description-help">Ajude a identificar o objetivo deste questionário.</small><small><span data-description-count>0</span>/1000</small></div><p class="field-error" id="description-error" data-error-for="description" hidden></p></div>
+              <div class="questionario-actions"><a class="button secondary" href="questionarios.html?tenant=horizon">Cancelar</a><button class="button" type="submit" data-form-submit>Guardar rascunho</button></div>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer class="rodape-app"><span>© <span data-year></span> SoftBenefits</span><nav aria-label="Informação"><a href="privacidade.html">Privacidade</a><a href="suporte.html">Ajuda e suporte</a></nav></footer>
+    </div>
+  </div>
+  <nav class="prototype-nav" aria-label="Navegação do protótipo"><strong>PROTÓTIPO</strong><a href="app.html?tenant=horizon">Tenant</a><a href="questionarios.html?tenant=horizon">Questionários</a><a href="questionario.html?tenant=horizon">Criar</a><a href="questionario.html?tenant=horizon&amp;id=1">Editar</a><a href="definicoes-pessoais.html?tenant=horizon">Definições</a></nav>
+  <script src="assets/site.js?v=13"></script>
+</body>
+</html>
