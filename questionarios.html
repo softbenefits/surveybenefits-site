@@ -25,7 +25,7 @@
       <header class="topbar"><button class="alternar-menu" type="button" data-toggle-sidebar aria-label="Alternar menu principal" aria-expanded="true">☰</button><a class="marca-topbar" href="app.html?tenant=horizon"><img class="marca-topbar-completa marca-plataforma" src="assets/logo-oficial.jpg?v=17" alt="SurveyBenefits"><img class="marca-topbar-completa marca-tenant" src="assets/horizon-logo.svg?v=1" alt="Horizon"></a><div class="breadcrumb"><span>Horizon</span><b aria-hidden="true">/</b><strong>Questionários</strong></div><div class="acoes-topbar"><div class="topbar-utilities"><button class="notificacoes" type="button" aria-label="Notificações">🔔</button><button class="fullscreen-toggle" type="button" data-fullscreen-toggle aria-label="Maximizar ecrã" title="Maximizar ecrã"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg></button></div><div class="conta"><button class="botao-conta" type="button" aria-label="Abrir menu de Rui Martins"><span class="avatar">RM</span><span class="identidade"><strong>Rui Martins</strong><small>Administrador do Tenant</small></span><span class="seta-conta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></button></div></div></header>
       <main class="app-content">
         <div class="questionarios-page">
-          <header class="page-head"><div><div class="eyebrow">Gestão</div><h1>Questionários</h1><p>Crie e mantenha os questionários em preparação da Horizon.</p></div><a class="button" href="questionario.html?tenant=horizon">Criar questionário</a></header>
+          <header class="page-head"><div><div class="eyebrow">Gestão</div><h1>Questionários</h1><p>Crie e mantenha os questionários em preparação da Horizon.</p></div><a class="button" href="questionario.html?tenant=horizon">Criar rascunho</a></header>
 
           <section class="questionarios-card" data-questionnaire-list aria-labelledby="catalogo-title">
             <div class="questionarios-toolbar"><div><strong id="catalogo-title">Questionários em preparação</strong><small data-result-count>3 questionários</small></div><label class="questionarios-search"><span class="sr-only">Pesquisar por título</span><input type="search" placeholder="Pesquisar por título" data-questionnaire-search></label></div>
@@ -36,7 +36,7 @@
                 <tr data-questionnaire-row data-title="avaliação de formação"><td data-label="Questionário"><strong>Avaliação de formação</strong><small>Recolha posterior a cada sessão.</small></td><td data-label="Estado"><span class="draft-pill">Criado</span></td><td data-label="Responsável">Rui Martins</td><td data-label="Atualizado">2 set.</td><td data-label="Ações"><a class="row-action" href="questionario.html?tenant=horizon&amp;id=3">Editar</a></td></tr>
               </tbody></table>
             </div>
-            <div class="questionarios-state" data-list-state="empty" hidden><span aria-hidden="true">▤</span><h2>Ainda não existem questionários</h2><p>Crie o primeiro questionário da Horizon para começar a preparar a sua estrutura.</p><a class="button" href="questionario.html?tenant=horizon">Criar questionário</a></div>
+            <div class="questionarios-state" data-list-state="empty" hidden><span aria-hidden="true">▤</span><h2>Ainda não existem questionários</h2><p>Crie o primeiro rascunho da Horizon para começar pelos seus dados iniciais.</p><a class="button" href="questionario.html?tenant=horizon">Criar rascunho</a></div>
             <div class="questionarios-state" data-list-state="no-results" hidden><span aria-hidden="true">⌕</span><h2>Sem resultados</h2><p>Não encontrámos questionários com este título.</p><button class="button secondary" type="button" data-clear-search>Limpar pesquisa</button></div>
             <div class="questionarios-state" data-list-state="loading" role="status" hidden><span class="loading-mark" aria-hidden="true"></span><h2>A carregar questionários…</h2><p>A obter os dados do Tenant.</p></div>
             <div class="questionarios-state" data-list-state="error" role="alert" hidden><span aria-hidden="true">!</span><h2>Não foi possível carregar</h2><p>Tente novamente. Se o problema continuar, contacte o suporte.</p><a class="button secondary" href="questionarios.html?tenant=horizon">Tentar novamente</a></div>
@@ -51,6 +51,6 @@
     </div>
   </div>
   <nav class="prototype-nav" aria-label="Navegação do protótipo"><strong>PROTÓTIPO</strong><a href="app.html">Plataforma</a><a href="app.html?tenant=horizon">Tenant</a><a href="questionarios.html?tenant=horizon">Questionários</a><a href="questionario.html?tenant=horizon">Criar</a><a href="definicoes-pessoais.html?tenant=horizon">Definições</a><a href="index.html">Hero</a><a href="login.html">Auth</a></nav>
-  <script src="assets/site.js?v=13"></script>
+  <script src="assets/site.js?v=14"></script>
 </body>
 </html>

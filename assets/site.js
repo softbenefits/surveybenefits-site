@@ -268,14 +268,14 @@ if (questionnaireForm) {
     const description = descriptionInput.value.trim();
     const errors = {
       title: title.length === 0
-        ? 'Indique o título do questionário.'
+        ? 'Indique o nome do questionário.'
         : title.length < 3
-          ? 'O título deve ter pelo menos 3 caracteres.'
+          ? 'O nome deve ter pelo menos 3 caracteres.'
           : title.length > 150
-            ? 'O título não pode exceder 150 caracteres.'
+            ? 'O nome não pode exceder 150 caracteres.'
             : '',
       description: description.length > 1000
-        ? 'A descrição não pode exceder 1000 caracteres.'
+        ? 'As observações não podem exceder 1000 caracteres.'
         : ''
     };
 
