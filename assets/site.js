@@ -3,9 +3,11 @@ const body = document.body;
 const appearanceStorageKey = 'surveybenefits.appearance';
 const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
 const isAuthenticatedShell = Boolean(document.querySelector('.app-frame'));
+const isFormOwnerDemo = params.get('role') === 'owner';
 
 if (params.get('tenant') === 'horizon') body.classList.add('tenant');
 if (params.get('mode') === 'impersonation') body.classList.add('impersonating');
+if (isFormOwnerDemo) document.querySelectorAll('.botao-conta .identidade small').forEach(label => { label.textContent = 'Responsável por Questionários'; });
 
 function getAppearance() { return localStorage.getItem(appearanceStorageKey) || 'system'; }
 function appearanceLabel(value) { return { system: 'Sistema', light: 'Claro', dark: 'Escuro' }[value] || 'Sistema'; }
@@ -49,7 +51,7 @@ if (isAuthenticatedShell) {
 
 function accountMenuMarkup() {
   return `<div class="menu-conta" data-account-menu hidden>
-    <div class="menu-conta-cabecalho"><span class="avatar">RM</span><span><strong>Rui Martins</strong><small class="menu-email">rui.martins@softbenefits.pt</small><small class="menu-role platform-name">Administrador da Plataforma</small><small class="menu-role tenant-name">Administrador do Tenant</small></span></div>
+    <div class="menu-conta-cabecalho"><span class="avatar">RM</span><span><strong>Rui Martins</strong><small class="menu-email">rui.martins@softbenefits.pt</small><small class="menu-role platform-name">Administrador da Plataforma</small><small class="menu-role tenant-name">${isFormOwnerDemo ? 'Responsável por Questionários' : 'Administrador do Tenant'}</small></span></div>
     <div class="menu-conta-separador"></div>
     <button class="menu-conta-item menu-aparencia" type="button" data-appearance-menu aria-expanded="false"><span><i aria-hidden="true">◐</i><strong>Aparência</strong></span><b data-appearance-current></b></button>
     <div class="submenu-aparencia" data-appearance-submenu hidden>
@@ -96,6 +98,14 @@ document.querySelectorAll('.conta').forEach(account => {
 });
 
 document.querySelectorAll('[data-appearance-option]').forEach(input => input.addEventListener('change', () => { if (input.checked) applyAppearance(input.value, true); }));
+
+if (isFormOwnerDemo) {
+  document.querySelectorAll('a[href^="questionario"]').forEach(anchor => {
+    const target = new URL(anchor.href);
+    target.searchParams.set('role', 'owner');
+    anchor.href = target.href;
+  });
+}
 
 const sidebarToggleButtons = document.querySelectorAll('[data-toggle-sidebar]');
 function setSidebarOpen(isOpen) {
@@ -174,6 +184,118 @@ document.querySelectorAll('[data-password-toggle]').forEach(button => button.add
   button.setAttribute('aria-pressed', String(shouldShow));
   button.setAttribute('aria-label', shouldShow ? 'Ocultar password' : 'Mostrar password');
 }));
+
+const questionnaireList = document.querySelector('[data-questionnaire-list]');
+if (questionnaireList) {
+  const listContent = questionnaireList.querySelector('[data-list-content]');
+  const listFooter = questionnaireList.querySelector('[data-list-footer]');
+  const search = questionnaireList.querySelector('[data-questionnaire-search]');
+  const resultCount = questionnaireList.querySelector('[data-result-count]');
+  const rows = [...questionnaireList.querySelectorAll('[data-questionnaire-row]')];
+  const states = [...questionnaireList.querySelectorAll('[data-list-state]')];
+
+  function showQuestionnaireState(name) {
+    const showList = !name;
+    listContent.hidden = !showList;
+    listFooter.hidden = !showList;
+    states.forEach(state => { state.hidden = state.dataset.listState !== name; });
+  }
+
+  const requestedState = params.get('state');
+  if (['empty', 'no-results', 'loading', 'error', 'forbidden'].includes(requestedState)) {
+    showQuestionnaireState(requestedState);
+  }
+
+  search?.addEventListener('input', () => {
+    const term = search.value.trim().toLocaleLowerCase('pt-PT');
+    let visible = 0;
+    rows.forEach(row => {
+      const matches = row.dataset.title.includes(term);
+      row.hidden = !matches;
+      if (matches) visible += 1;
+    });
+    if (resultCount) resultCount.textContent = `${visible} ${visible === 1 ? 'questionário' : 'questionários'}`;
+    showQuestionnaireState(visible === 0 ? 'no-results' : '');
+  });
+
+  questionnaireList.querySelector('[data-clear-search]')?.addEventListener('click', () => {
+    if (!search) return;
+    search.value = '';
+    rows.forEach(row => { row.hidden = false; });
+    if (resultCount) resultCount.textContent = '3 questionários';
+    showQuestionnaireState('');
+    search.focus();
+  });
+
+  const toast = params.get('toast');
+  if (toast === 'created') showToast('Questionário criado.');
+  if (toast === 'updated') showToast('Questionário atualizado.');
+}
+
+const questionnaireForm = document.querySelector('[data-questionnaire-form]');
+if (questionnaireForm) {
+  const titleInput = questionnaireForm.querySelector('[data-questionnaire-title]');
+  const descriptionInput = questionnaireForm.querySelector('[data-questionnaire-description]');
+  const titleCount = questionnaireForm.querySelector('[data-title-count]');
+  const descriptionCount = questionnaireForm.querySelector('[data-description-count]');
+  const questionnaireId = params.get('id');
+  const examples = {
+    '1': ['Experiência de integração', 'Avaliação do processo de acolhimento.'],
+    '2': ['Clima organizacional', 'Questionário interno para as equipas.'],
+    '3': ['Avaliação de formação', 'Recolha posterior a cada sessão.']
+  };
+
+  if (questionnaireId && examples[questionnaireId]) {
+    titleInput.value = examples[questionnaireId][0];
+    descriptionInput.value = examples[questionnaireId][1];
+    document.querySelector('[data-form-title]').textContent = 'Editar questionário';
+    document.querySelector('[data-form-breadcrumb]').textContent = 'Editar';
+    questionnaireForm.querySelector('[data-form-submit]').textContent = 'Guardar alterações';
+    document.title = 'Editar questionário — SurveyBenefits';
+  }
+
+  const updateCounters = () => {
+    titleCount.textContent = titleInput.value.length;
+    descriptionCount.textContent = descriptionInput.value.length;
+  };
+  titleInput.addEventListener('input', updateCounters);
+  descriptionInput.addEventListener('input', updateCounters);
+  updateCounters();
+
+  questionnaireForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const title = titleInput.value.trim();
+    const description = descriptionInput.value.trim();
+    const errors = {
+      title: title.length === 0
+        ? 'Indique o nome do questionário.'
+        : title.length < 3
+          ? 'O nome deve ter pelo menos 3 caracteres.'
+          : title.length > 150
+            ? 'O nome não pode exceder 150 caracteres.'
+            : '',
+      description: description.length > 1000
+        ? 'As observações não podem exceder 1000 caracteres.'
+        : ''
+    };
+
+    Object.entries(errors).forEach(([name, message]) => {
+      const input = questionnaireForm.elements[name];
+      const error = questionnaireForm.querySelector(`[data-error-for="${name}"]`);
+      input.setAttribute('aria-invalid', String(Boolean(message)));
+      error.textContent = message;
+      error.hidden = !message;
+    });
+
+    if (Object.values(errors).some(Boolean)) {
+      showToast('Reveja os dados do questionário.', 'error');
+      questionnaireForm.querySelector('[aria-invalid="true"]')?.focus();
+      return;
+    }
+
+    window.location.href = `questionarios.html?tenant=horizon${isFormOwnerDemo ? '&role=owner' : ''}&toast=${questionnaireId ? 'updated' : 'created'}`;
+  });
+}
 
 document.querySelectorAll('[data-fullscreen-toggle]').forEach(button => {
   const updateLabel = () => { const fullscreen = Boolean(document.fullscreenElement); button.setAttribute('aria-label', fullscreen ? 'Sair de ecrã inteiro' : 'Maximizar ecrã'); button.setAttribute('title', fullscreen ? 'Sair de ecrã inteiro' : 'Maximizar ecrã'); };

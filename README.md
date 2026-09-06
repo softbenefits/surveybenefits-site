@@ -1,11 +1,21 @@
 # SurveyBenefits — Protótipo público
 
-Protótipo estático da foundation UX/UI M0.5 do SurveyBenefits.
+Protótipo estático da foundation UX/UI M0.5 e dos fluxos aprovados do SurveyBenefits.
 
-- não implementa autenticação nem funcionalidades de negócio;
+- não implementa autenticação, API, base de dados nem persistência real de negócio;
 - não recolhe nem envia credenciais;
 - usa exclusivamente dados fictícios;
-- demonstra landing, autenticação, shells de Plataforma e Tenant, Aparência clara/escura e `Atuar como`.
+- demonstra landing, autenticação, shells de Plataforma e Tenant, Aparência clara/escura, `Atuar como` e o mockup M1.1 de questionários em preparação.
+
+## M1.1 — Questionário em preparação
+
+O catálogo e o formulário de questionário são apenas uma simulação navegável. Demonstram listagem, pesquisa, estados de interface, criação e edição dos dados base de um rascunho; não guardam questionários nem executam regras de negócio reais.
+
+- catálogo: `questionarios.html?tenant=horizon`;
+- criar: `questionario.html?tenant=horizon`;
+- editar: `questionario.html?tenant=horizon&id=1`;
+- estados alternativos: parâmetro `state` com `empty`, `no-results`, `loading`, `error` ou `forbidden`.
+- vista de Responsável por Questionários: `questionarios.html?tenant=horizon&role=owner`.
 
 O produto e a documentação técnica vivem num repositório privado separado.
 
